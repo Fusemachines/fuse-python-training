@@ -1,10 +1,10 @@
 from config import Config, DevelopmentConfig, ProductionConfig, TestingConfig
 import dotenv
-def config(env="dev"):
+def config(env="devlopement"):
     dotenv.load_dotenv()
-    if env=="dev":
+    if env == "devlopement":
         return DevelopmentConfig
-    if env == "prod":
+    if env == "production":
         return ProductionConfig
     if env == "testing":
         return TestingConfig

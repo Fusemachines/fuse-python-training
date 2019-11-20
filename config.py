@@ -32,10 +32,13 @@ class DevelopmentConfig(Config):
     """
     This configutation is for development environment
     """
+    ENV = 'developement'
     DEBUG = True
+    TESTING = True
     DB_HOST = "localhost"
     DB_PORT = "27017"
     DB_NAME = "admin"
+    ENV = "developement"
 
 
 class TestingConfig(Config):
@@ -43,6 +46,7 @@ class TestingConfig(Config):
     This configuration is for testing environment
     """
     DEBUG = False
+    TESTING = True
     DB_HOST = "localhost"
     DB_PORT = "27017"
     DB_NAME = "test"
