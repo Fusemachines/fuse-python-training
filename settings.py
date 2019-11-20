@@ -1,6 +1,7 @@
 from config import Config, DevelopmentConfig, ProductionConfig, TestingConfig
-
+import dotenv
 def config(env="dev"):
+    dotenv.load_dotenv()
     if env=="dev":
         return DevelopmentConfig
     if env == "prod":

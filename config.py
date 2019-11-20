@@ -1,3 +1,4 @@
+import os
 class Config:
     """
     Base class for all config.
@@ -5,13 +6,21 @@ class Config:
     """
     DEBUG=False
     TESTING=False
-    DB_HOST = "127.0.0.1"
-    DB_PORT = "27017"
-    DB_NAME = "admin"
+    DB_HOST = os.environ.get("DB_HOST")
+    DB_PORT = os.environ.get("DB_PORT")
+    DB_NAME = os.environ.get("DB_NAME")
+    MONGO_URI = f'mongodb://{DB_HOST}:{DB_PORT}/{DB_NAME}'
 
-    @property
-    def MONGO_URI(self):         # Note: all caps
-        return f'mongodb://{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}'
+    @classmethod
+    def fields(self):
+        return {
+            "DEBUG":self.DEBUG,
+            "TESTING": self.TESTING,
+            "DB_HOST": self.DB_HOST,
+            "DB_PORT": self.DB_PORT,
+            "DB_NAME": self.DB_NAME,
+            "MONGO_URI":  self.MONGO_URI
+        }
 
 class ProductionConfig(Config):
     """
@@ -23,8 +32,11 @@ class DevelopmentConfig(Config):
     """
     This configutation is for development environment
     """
-    DEBUG = False
+    DEBUG = True
     DB_HOST = "localhost"
+    DB_PORT = "27017"
+    DB_NAME = "admin"
+
 
 class TestingConfig(Config):
     """

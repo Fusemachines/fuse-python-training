@@ -1,2 +1,8 @@
 #ignore ide cache folder
 .vscode/
+
+#ignore enviroment credentials
+.env
+
+#ignore instance folder
+instance/
