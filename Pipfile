@@ -10,6 +10,7 @@ pylint = "*"
 flask = "*"
 flask-pymongo = "*"
 python-dotenv = "*"
+flask-mongoengine = "*"
 
 [requires]
 python_version = "3.7"
