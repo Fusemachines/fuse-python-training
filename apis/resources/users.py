@@ -9,7 +9,7 @@ user_service = UserService()
 @user.route("/", methods=["POST"])
 def users():
     data = request.json
-    user = user_service.create(**data)
+    user = user_service.create(data)
     return jsonify(user)
 
 @user.route("/", methods=["GET"])
