@@ -11,6 +11,7 @@ flask = "*"
 flask-pymongo = "*"
 python-dotenv = "*"
 flask-mongoengine = "*"
+flask-marshmallow = "*"
 
 [requires]
 python_version = "3.7"
