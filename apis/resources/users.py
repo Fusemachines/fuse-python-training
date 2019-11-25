@@ -3,6 +3,9 @@ from apis.models.users import User
 from apis.services import UserService
 from apis.schemas import UserSchema
 from collections import defaultdict
+from uuid import uuid4
+from bson.objectid import ObjectId
+
 
 user = Blueprint("user", __name__, url_prefix="/users")
 
@@ -25,4 +28,18 @@ def users():
 @user.route("/", methods=["GET"])
 def list():
     user = user_service.list()
+    return jsonify(user)
+
+@user.route("/<id>/", methods=["PUT"])
+def update(id):
+    data = request.json
+    user = User.objects.get(pk=ObjectId(id))
+    user.name = data['name']
+    user.save()
+    return jsonify(user)
+
+@user.route("/<id>/", methods=["GET"])
+def retrive(id):
+    user = User.objects.get(pk=ObjectId(id))
+    print(user)
     return jsonify(user)
