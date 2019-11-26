@@ -1,5 +1,8 @@
 #ignore ide cache folder
 .vscode/
+__pycache__
+*/__pycache__
+*/*/__pycache__
 
 #ignore enviroment credentials
 .env
