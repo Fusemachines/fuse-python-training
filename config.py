@@ -10,6 +10,12 @@ class Config:
     DB_PORT = os.environ.get("DB_PORT")
     DB_NAME = os.environ.get("DB_NAME")
     MONGO_URI = f'mongodb://{DB_HOST}:{DB_PORT}/{DB_NAME}'
+    MONGODB_DB = os.environ.get("MONGODB_DB")
+    MONGODB_HOST = os.environ.get("MONGODB_HOST")
+    MONGODB_PORT = os.environ.get("MONGODB_PORT")
+    MONGODB_USERNAME = os.environ.get("MONGODB_USERNAME")
+    MONGODB_PASSWORD = os.environ.get("MONGODB_PASSWORD")
+    MONGODB_CONNECT = True
 
     @classmethod
     def fields(self):
@@ -19,7 +25,13 @@ class Config:
             "DB_HOST": self.DB_HOST,
             "DB_PORT": self.DB_PORT,
             "DB_NAME": self.DB_NAME,
-            "MONGO_URI":  self.MONGO_URI
+            "MONGO_URI":  self.MONGO_URI,
+            "MONGODB_DB" : self.MONGODB_DB,
+            "MONGODB_HOST" : self.MONGODB_HOST,
+            "MONGODB_PORT" : self.MONGODB_PORT,
+            "MONGODB_USERNAME" : self.MONGODB_USERNAME,
+            "MONGODB_PASSWORD" : self.MONGODB_PASSWORD,
+            "MONGODB_CONNECT" :  self.MONGODB_CONNECT
         }
 
 class ProductionConfig(Config):
@@ -32,13 +44,17 @@ class DevelopmentConfig(Config):
     """
     This configutation is for development environment
     """
-    ENV = 'developement'
     DEBUG = True
     TESTING = True
     DB_HOST = "localhost"
     DB_PORT = "27017"
     DB_NAME = "admin"
-    ENV = "developement"
+    MONGODB_DB = "admin"
+    MONGODB_HOST = "localhost"
+    MONGODB_PORT = 27017
+    # MONGODB_USERNAME = os.environ.get("MONGODB_USERNAME")
+    # MONGODB_PASSWORD = os.environ.get("MONGODB_PASSWORD")
+    MONGODB_CONNECT = True
 
 
 class TestingConfig(Config):

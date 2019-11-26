@@ -1,8 +1,8 @@
 from config import Config, DevelopmentConfig, ProductionConfig, TestingConfig
 import dotenv
-def config(env="devlopement"):
+def config(env="development"):
     dotenv.load_dotenv()
-    if env == "devlopement":
+    if env == "development":
         return DevelopmentConfig
     if env == "production":
         return ProductionConfig

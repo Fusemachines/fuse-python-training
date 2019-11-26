@@ -3,6 +3,7 @@ from settings import config
 from flask import Flask
 from flask_pymongo import PyMongo
 from apis.resources import user
+from apis.db import db
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
     env = os.environ.get("FLASK_ENV")
@@ -24,6 +25,7 @@ def create_app():
         app.config.from_object(config(env))
     else:
         app.config.from_pyfile("application.cfg")
+    db.init_app(app)
     app.register_blueprint(user)
     return app
 
