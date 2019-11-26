@@ -33,11 +33,6 @@ pipenv shell # you should be in the directory where Pipfile lies
 ```
 
 
-```bash
-pip install foobar
-```
-
-
 ## Contributing
 Not yet
 
