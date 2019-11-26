@@ -32,6 +32,14 @@ Before running the application be sure you have activated you environment. To ac
 pipenv shell # you should be in the directory where Pipfile lies
 ```
 
+## Running the Application
+1. Export necessary Environment Variables
+```bash
+export FLASK_APP=apis
+export FLASK_ENV=development
+```
+2. Run the flask app  
+`flask run`
 
 ## Contributing
 Not yet
