@@ -46,9 +46,9 @@ class DevelopmentConfig(Config):
     """
     DEBUG = True
     TESTING = True
-    DB_HOST = "localhost"
-    DB_PORT = "27017"
-    DB_NAME = "admin"
+    # DB_HOST = "localhost"
+    # DB_PORT = "27017"
+    # DB_NAME = "admin"
     MONGODB_DB = "admin"
     MONGODB_HOST = "localhost"
     MONGODB_PORT = 27017
