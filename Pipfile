@@ -13,6 +13,10 @@ python-dotenv = "*"
 flask-mongoengine = "*"
 flask-marshmallow = "*"
 flask-uuid = "*"
+pyjwt = "*"
+flask-cors = "*"
+flask-bcrypt = "*"
+passlib = "*"
 
 [requires]
 python_version = "3.7"

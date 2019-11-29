@@ -12,10 +12,11 @@ class Config:
     MONGO_URI = f'mongodb://{DB_HOST}:{DB_PORT}/{DB_NAME}'
     MONGODB_DB = os.environ.get("MONGODB_DB")
     MONGODB_HOST = os.environ.get("MONGODB_HOST")
-    MONGODB_PORT = os.environ.get("MONGODB_PORT")
+    MONGODB_PORT = int(os.environ.get("MONGODB_PORT"))
     MONGODB_USERNAME = os.environ.get("MONGODB_USERNAME")
     MONGODB_PASSWORD = os.environ.get("MONGODB_PASSWORD")
     MONGODB_CONNECT = True
+
 
     @classmethod
     def fields(self):

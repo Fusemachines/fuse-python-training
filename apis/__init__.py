@@ -2,11 +2,13 @@ import os
 from settings import config
 from flask import Flask
 from flask_pymongo import PyMongo
+from flask_cors import CORS
 from apis.resources import user
 from apis.db import db
 
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
+    CORS(app)
     env = os.environ.get("FLASK_ENV")
     try:
         os.makedirs(app.instance_path)

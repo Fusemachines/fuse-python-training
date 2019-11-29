@@ -5,4 +5,5 @@ from flask_marshmallow.fields import fields
 class UserSchema(Schema):
     email = fields.Email(required=True)
     name = fields.String()
-    address = fields.String(required=True)
+    address = fields.String()
+    password = fields.String(load_only=True)
