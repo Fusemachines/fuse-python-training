@@ -1,7 +1,7 @@
-# fuse-python-training | A Source code on Flask APIs
+# Python & Flask APIs Training
+This repo contains a part of codebase prepared for a internal Python + Flask training done within Fusemachines. 
 
 ## Installation
-
 First create a virutal environment in you system. For this purpose use [pipenv](https://pypi.org/project/pipenv/) . Verify either you have installed pipenv or not. For this:
 
 ```bash
@@ -41,9 +41,20 @@ export FLASK_ENV=development
 2. Run the flask app  
 `flask run`
 
-## Contributing
-Not yet
+## Code Organization
+All the sessions are recorded in their respective branches. Below are the corresponding branches and their description.
+- `master` - bareminimum of the flask app
+- `session-6/1-mongo-setup` - Adding mongo setup and CRUD operations
+- `session-6/1-mongo-setup` - Adding Schemas to the flask app
+- `session-6/3-services` - Refactoring the sevices separately
+- `session-7/1-basic-auth` - Add basic authentication 
+- `session-7/1-token-based` - Add Token based Authentication
+
+
+## Contributors / Session Facilitator
+- Sushil Thapa ([www.thapasushil.com](https://thapasushil.com))
+- Prem(Anuj) Subedi
 
 ## License
-None
+All Rights Reserved to Fusemachines. 
 
