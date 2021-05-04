@@ -1,7 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'nginx', '.']
+  args: ['build', '-t', 'nginx:v2', '.']
   timeout: 600s
 - name: 'push new version of docker build to gcr'
-  args: ['tag', 'nginx', 'gcr.io/sandbox-230010/nginx']
+  args: ['tag', 'nginx:v2', 'gcr.io/sandbox-230010/nginx:v2']
 
