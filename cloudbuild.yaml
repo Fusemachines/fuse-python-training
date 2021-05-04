@@ -1,5 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['builld', '-t', 'gcr-io/my-project/experiment1', '.']
+  args: ['build', '-t', '.']
   timeout: 600s
 
