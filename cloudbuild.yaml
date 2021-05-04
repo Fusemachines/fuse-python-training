@@ -2,5 +2,5 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'mongo', '.']
   timeout: 600s
-images:['sandbox-230010/nginx']
+images:['gcr.io/sandbox-230010/nginx']
 
